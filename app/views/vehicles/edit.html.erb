@@ -1,0 +1,13 @@
+<h1>Edit Vehicle</h1>
+
+<%= render 'form' %><br><br><br>
+
+<bold>Status: </bold>
+<% if @vehicle.status %>
+  <strong>Paid</strong>
+<% else %>
+  <strong id="status">Unpaid</strong><br>
+  <%= link_to image_tag('/PayPal.gif'), {action: 'update', controller: 'vehicles'}, {class: 'PayPal'}%>
+<% end %>
+
+<br><br><%= link_to 'Show All', vehicles_path %>

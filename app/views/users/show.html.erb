@@ -1,0 +1,56 @@
+<div class="container-fluid">
+<div class="row">
+    <label class="control-label col-sm-2">Email</label>
+    <div class="col-sm-10 text-left">
+        <%= @user.email %><br>
+    </div>
+</div>
+<div class="row">
+    <label class="control-label col-sm-2">First Name</label>
+    <div class="col-sm-10 text-left"> 
+    <%= @user.fname %><br>
+    </div>
+</div>
+<div class="row">
+    <label class="control-label col-sm-2">Last Name</label>
+    <div class="col-sm-10 text-left">
+        <%= @user.lname %><br>
+    </div>
+</div>
+<div class="row"> 
+    <label class="control-label col-sm-2">Street Address</label>
+    <div class="col-sm-10 text-left">
+        <%= @user.street %><br>
+    </div>
+</div>
+<div class="row"> 
+    <label class="control-label col-sm-2">City</label>
+    <div class="col-sm-10 text-left">
+        <%= @user.city %><br>
+    </div>
+</div>
+<div class="row">
+    <label class="control-label col-sm-2">Province</label>
+    <div class="col-sm-10 text-left"> 
+        <%= @user.province %><br>
+    </div>
+</div>
+<div class="row">
+    <label class="control-label col-sm-2">Postal Code</label>
+    <div class="col-sm-10 text-left">
+        <%= @user.postal %><br>
+    </div>
+</div>
+<div class="row"> 
+    <label class="control-label col-sm-2">Telephone Number</label>
+    <div class="col-sm-10 text-left">
+        <%= @user.phone %><br>
+    </div>
+</div>
+</div>
+
+<%= link_to 'Edit User', edit_user_path(@user) %>
+
+<% if current_user.role_id == 1 %>
+	<%= link_to 'Delete', user_path(@user), method: :delete, data: { confirm: 'Are you sure?'} %>
+<% end %>

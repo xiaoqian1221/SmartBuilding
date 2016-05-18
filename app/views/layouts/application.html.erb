@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicleapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+	</div>
+	<nav class="navbar">
+		<ul class="nav navbar-nav">
+			<li><%= link_to 'Sign Up', new_user_registration_path, :class => "navLink" %></li>
+			<li><%= link_to 'Sign In', new_user_session_path, :class => "navLink" %></li>
+			<li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => "navLink" %></li>
+			
+			<li><%= link_to 'Display Users', users_path, :class => "navLink" %></li>
+			<li><%= link_to 'Display Vehicles', vehicles_path, :class => "navLink" %></li>
+			
+			<li><%= link_to 'Add New Vehicle', new_vehicle_path, :class => "navLink" %></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<%= yield %>
+	</div>
+</body>
+</html>

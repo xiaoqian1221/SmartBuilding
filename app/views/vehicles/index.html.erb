@@ -1,0 +1,30 @@
+<h1>Vehicles List</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th class="text-center">Vehicle</th>
+			<th class="text-center">User</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @vehicles.each do |vehicle| %>
+		<% if vehicle.user == current_user %>
+		<tr>
+			<td><%= vehicle.license %></td>
+			<td><%= vehicle.user.email %></td>
+			<td><%= link_to 'Show', vehicle %></td>
+			<td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+			<td><%= link_to 'Delete', vehicle, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+		</tr>
+		<% elsif current_user.role_id == 1 %>
+		<tr>
+			<td><%= vehicle.license %></td>
+			<td><%= vehicle.user.email %></td>
+			<td><%= link_to 'Show', vehicle %></td>
+			<td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+			<td><%= link_to 'Delete', vehicle, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+		</tr>
+		<% end %>
+		<% end %>
+	</tbody>
+</table>

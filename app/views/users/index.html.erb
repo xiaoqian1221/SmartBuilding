@@ -1,0 +1,32 @@
+<h1>Users List</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th class="text-center">Email</th>
+			<th class="text-center">First Name</th>
+			<th class="text-center">Last Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% if current_user.role_id == 1 %>
+		<% @users.each do |user| %>
+		<tr>
+			<td><%= user.email %></td>
+			<td><%= user.fname %></td>
+			<td><%= user.lname %></td>
+			<td><%= link_to 'Show', user %></td>
+			<td><%= link_to 'Edit', edit_user_path(user) %></td>
+			<td><%= link_to 'Delete', user, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+		</tr>
+		<% end %>
+		<% else %>
+		<tr>
+			<td><%= current_user.email %></td>
+			<td><%= current_user.fname %></td>
+			<td><%= current_user.lname %></td>
+			<td><%= link_to 'Show', current_user %></td>
+			<td><%= link_to 'Edit', edit_user_path(current_user) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

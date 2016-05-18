@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  license: MyString
+  colour: MyString
+  make: MyString
+  model: MyString
+  year: 1
+  status: false
+
+two:
+  license: MyString
+  colour: MyString
+  make: MyString
+  model: MyString
+  year: 1
+  status: false

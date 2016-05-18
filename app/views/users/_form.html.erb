@@ -1,0 +1,65 @@
+<%= form_for @user do |f| %>
+
+    <% if @user.errors.any? %>
+        <h2>Errors</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+    <% end %>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <%= f.label :Email, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10">
+                <%= f.text_field :email, :class=> "form-control" %><br>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <%= f.label :First_Name, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10"> 
+            <%= f.text_field :fname, :class=> "form-control" %><br>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <%= f.label :Last_Name, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10">
+                <%= f.text_field :lname, :class=> "form-control" %><br>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <%= f.label :Street_Address, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10">
+                <%= f.text_field :street, :class=> "form-control" %><br>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <%= f.label :City, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10">
+                <%= f.text_field :city, :class=> "form-control" %><br>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <%= f.label :Province, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10"> 
+                <%= f.select :province, ['Alberta', 'British Columbia', 'Manitoba',
+                                 'Newfoundland and Labrador', 'New Brunswick', 'Northwest
+                                          Territories', 'Nova Scotia', 'Nunavut', 'Ontario',
+                                 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Yukon'], {}, class: "form-control" %><br>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <%= f.label :Postal_Code, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10">
+                <%= f.text_field :postal, :class=> "form-control", :placeholder=> "A0A 0A0"%><br>
+            </div>
+        </div>
+        <div class="form-group"> 
+            <%= f.label :Telephone_Number, :class=> "control-label col-sm-2" %>
+            <div class="col-sm-10">
+                <%= f.text_field :phone, :class=> "form-control", :placeholder=> "613123567" %><br>
+            </div>
+        </div>
+        <%= f.submit class: "btn btn-primary " %>
+    </form>
+<% end %>
