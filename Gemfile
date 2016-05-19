@@ -46,3 +46,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.1'
+
+# https://devcenter.heroku.com/articles/rails4
+group :production do
+  gem 'pg','0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
